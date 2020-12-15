@@ -23,7 +23,10 @@ async function run(): Promise<void> {
         }
 
         const primaryKey = core.getInput(Inputs.Key, { required: true });
-        core.saveState(State.CachePrimaryKey, primaryKey);
+
+        // Remove to prevent locking the cache-key to other jobs
+        // utils.setCacheState(cacheKey);
+        // core.saveState(State.CachePrimaryKey, primaryKey);
 
         const restoreKeys = utils.getInputAsArray(Inputs.RestoreKeys);
         const cachePaths = utils.getInputAsArray(Inputs.Path, {
