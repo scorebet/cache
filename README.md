@@ -19,7 +19,6 @@ See ["Caching dependencies to speed up workflows"](https://help.github.com/githu
     path: |
       ~/cache
       !~/cache/exclude
-      **/node_modules
     key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
 ```
 
@@ -100,6 +99,7 @@ See [Examples](examples.md) for a list of `actions/cache` implementations for us
 - [OCaml/Reason - esy](./examples.md#ocamlreason---esy)
 - [PHP - Composer](./examples.md#php---composer)
 - [Python - pip](./examples.md#python---pip)
+- [Python - pipenv](./examples.md#python---pipenv)
 - [R - renv](./examples.md#r---renv)
 - [Ruby - Bundler](./examples.md#ruby---bundler)
 - [Rust - Cargo](./examples.md#rust---cargo)
@@ -143,7 +143,7 @@ See [Using contexts to create cache keys](https://help.github.com/en/actions/con
 
 ## Cache Limits
 
-A repository can have up to 5GB of caches. Once the 5GB limit is reached, older caches will be evicted based on when the cache was last accessed.  Caches that are not accessed within the last week will also be evicted.
+A repository can have up to 10GB of caches. Once the 10GB limit is reached, older caches will be evicted based on when the cache was last accessed.  Caches that are not accessed within the last week will also be evicted.
 
 ## Skipping steps based on cache-hit
 
