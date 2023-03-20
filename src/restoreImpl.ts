@@ -26,6 +26,8 @@ async function restoreImpl(
 
         const primaryKey = core.getInput(Inputs.Key, { required: true });
         stateProvider.setState(State.CachePrimaryKey, primaryKey);
+        // MODIFIED BY theScore
+        // the line above was commented https://github.com/actions/cache/commit/db214e33faf6d675110901cb292681a6fced5870
 
         const restoreKeys = utils.getInputAsArray(Inputs.RestoreKeys);
         const cachePaths = utils.getInputAsArray(Inputs.Path, {
