@@ -1,3 +1,5 @@
+### DEPRECATED, use `actions/cache/restore@v3` instead ([link](https://github.com/actions/cache/blob/main/restore/README.md)).
+
 # cache
 
 This action allows caching dependencies and build outputs to improve workflow execution time.
